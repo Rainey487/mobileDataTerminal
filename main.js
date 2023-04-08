@@ -75,6 +75,12 @@ changeDept = (activeDept) => {
     }
 }
 
+window.addEventListener('load', function () {
+    var dropdown = document.getElementById('myDropdown');
+    dropdown.selectedIndex = 0; // Select the default option
+});
+
+
 const clearNote = document.getElementById('clearNote')
 const saveNote = document.getElementById('saveNote');
 const sendNote = document.getElementById('sendNote')
