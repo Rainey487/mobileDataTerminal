@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="main.js"></script>
+    <title>Los Santos Police Dept MDT</title>
+</head>
+
+<body id="mainBody">
+    <header>
+        <a href="#">
+            </href><img id="deptLogo" src="images/LSPDlogo.webp" alt="Police Logo"></a>
+        <h1>Mobile Data Terminal</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a onclick="openPopup('personPopup')" href="#">Person Search</a></li>
+                <li><a onclick="openPopup('vehiclePopup')" href="#">Vehicle Search</a></li>
+                <li><a onclick="openPopup('alertsPopup')" href="#">Alerts</a></li>
+                <!-- <li><select id="myDropdown">
+                        <option value="Police">LSPD</option>
+                        <option value="Sheriffs">BCSO</option>
+                        <option value="State">SAHP</option>
+                    </select></li> -->
+                <li><a id="logoutBtn" href="#">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="statusBtns">
+        <h1 id="statusCurrent">Current Status</h1>
+        <p id="callCurrent">Current Call Information</p>
+        <form action="">
+            <input onclick="changeStatus('On-Duty')" id="statusOn" type="button" value="On-Duty">
+            <input onclick="changeStatus('Available')" id="statusAvail" type="button" value="Available">
+            <input onclick="changeStatus('Traffic Stop')" id="statusTraffic" type="button" value="Traffic Stop">
+            <input onclick="changeStatus('Busy')" id="statusBusy" type="button" value="Busy">
+            <input onclick="changeStatus('Off-Duty')" id="statusOff" type="button" value="Off-Duty">
+            <input onclick="changeStatus('Panic Alarm')" id="statusPanic" type="button" value="Panic Alarm">
+        </form>
+    </div>
+    <div class="callDetails">
+        <h1>Current Status</h1>
+        <p>Current Call Information</p>
+        <form action="">
+            <input id="deptSelect" onclick="changeDept('Police')" type="button" value="Police">
+            <input id="deptSelect" onclick="changeDept('Sheriff')" type="button" value="Sheriff">
+            <input id="deptSelect" onclick="changeDept('State')" type="button" value="State Police">
+            <input type="submit" value="Traffic">
+            <input type="submit" value="Off-Duty">
+            <input type="submit" value="On-Duty">
+        </form>
+    </div>
+    <div class="callsWaiting">
+        <h1>Calls For Service</h1>
+        <table>
+            <tr>
+                <td>
+                    <p>Call #5863</p>
+                    <p>890 Adams Apple Blvd</p>
+                    <p>Disorderly Conduct</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Call #5562</p>
+                    <p>254 Rockford Drive</p>
+                    <p>Attempted Burglary</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Call #4894</p>
+                    <p>1020 Senora Road</p>
+                    <p>Person with a weapon</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Call #4438</p>
+                    <p>660 Nth Rt.13</p>
+                    <p>Suspicious Vehicle</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Call #2257</p>
+                    <p>1300 Imperial Drive</p>
+                    <p>Assault w/ deadly weapon</p>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="scratchPad">
+        <textarea name="Scratch Pad" id="myTextarea" placeholder="Type here..."></textarea>
+        <div class="scratchBtns">
+            <form action="">
+                <input type="button" name="saveNote" id="saveNote" value="Save Notes">
+                <input type="button" name="sendNote" id="sendNote" value="Send Notes">
+                <input type="button" name="clearNote" id="clearNote" value="Clear Notes">
+            </form>
+        </div>
+    </div>
+    <div class="currentSearch">
+
+    </div>
+    <footer>
+        <p>Current Department:</p>
+        <select id="myDropdown">
+            <option id="deptSelect" onclick="changeDept('Police')" value="Police">Los Santos Police Department</option>
+            <option id="deptSelect" onclick="changeDept('Sheriff')" value="Sheriffs">Blaine County Sheriffs Office
+            </option>
+            <option id="deptSelect" onclick="changeDept('State')" value="State">San Andreas Highway Patrol</option>
+        </select>
+        <p>Copyright roleplay community 2023</p>
+        <p style="margin-left: auto;">This website is for roleplay use only</p>
+    </footer>
+
+    <!-- Popups -->
+    <div class="searchPopupsContainer" id="personPopup" onclick="closePopup('personPopup')">
+        <div class="personPopupContent" id="personPopupContent" onclick="event.stopPropagation()">
+            <h1>Person Database Search</h1>
+            <input type="search" name="personSearchBox" id="personSearchBox" placeholder="Enter Name...">
+            <div class="personDetails">
+                <table>
+                    <tr>
+                        <td>First Name:</td>
+                        <td>1234</td>
+                    </tr>
+                    <tr>
+                        <td>Last Name:</td>
+                        <td>1234</td>
+                    </tr>
+                    <tr>
+                        <td>Date of Birth:</td>
+                        <td>1234</td>
+                    </tr>
+                    <tr>
+                        <td>Race:</td>
+                        <td>1234</td>
+                    </tr>
+                    <tr>
+                        <td>Hair Colour:</td>
+                        <td>1234</td>
+                    </tr>
+                    <tr>
+                        <td>Height:</td>
+                        <td>1234</td>
+                    </tr>
+                    <tr>
+                        <td>Weight:</td>
+                        <td>1234</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="searchPopupsContainer" id="vehiclePopup" onclick="closePopup('vehiclePopup')">
+        <div class="vehiclePopupContent" id="vehiclePopupContent" onclick="event.stopPropagation()">
+            <h1>Vehicle Database Search</h1>
+            <input type="search" name="vehicleSearchBox" id="vehicleSearchBox" placeholder="Enter Plate Number...">
+            <div class="registrationDetails">
+                <table>
+                    <colgroup>
+                        <col>
+                        <col style="width: fit-content">
+                        <col style="width: 1%">
+                        <col>
+                    </colgroup>
+                    <th colspan="3">San Andreas Vehicle Registration</th>
+                    <tr>
+                        <td>
+                            Plate:
+                        </td>
+                        <td>
+                            1234
+                        </td>
+                        <td>
+                            Expires:
+                        </td>
+                        <td>
+                            Feb 24
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Year/Make:
+                        </td>
+                        <td>
+                            2022 / Baller
+                        </td>
+                        <td>
+                            Model:
+                        </td>
+                        <td>
+                            Galivantor
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Vin Number:
+                        </td>
+                        <td>
+                            511D564DA321
+                        </td>
+                        <td>
+                            Colour:
+                        </td>
+                        <td>
+                            Red
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Date of Issue:
+                        </td>
+                        <td>
+                            22/02/2022
+                        </td>
+                    </tr>
+                    <th colspan="4">Registered Owner</th>
+                    <tr>
+                        <td>Last Name:</td>
+                        <td>Smith</td>
+                    </tr>
+                    <tr>
+                        <td>First Name:</td>
+                        <td>John</td>
+                    </tr>
+                    <tr>
+                        <td>Date of Birth:</td>
+                        <td>08/22/1999</td>
+                    </tr>
+                    <tr>
+                        <td>Address:</td>
+                        <td colspan="4">123 Fake Street, 1020, Los Santos</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="insuranceDetails">
+                <table>
+                    <th colspan="2">Vehicle Insurance</th>
+                    <tr>
+                        <td>Company:</td>
+                        <td colspan="2">Mors Mutual Insurance</td>
+                    </tr>
+                    <tr>
+                        <td>Issued:</td>
+                        <td>22/02/2022</td>
+                    </tr>
+                    <tr>
+                        <td>Expiry:</td>
+                        <td>22/02/2023</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><img
+                                src="https://www.gta5rides.com/vehicleImages/cropped/Baller2-GTAV-front.jpg.jpg" alt="">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <!-- <div class="vehiclePhoto">
+                <img src="https://www.gta5rides.com/vehicleImages/cropped/Baller2-GTAV-front.jpg.jpg" alt="">
+            </div> -->
+        </div>
+    </div>
+    <div class="searchPopupsContainer" id="alertsPopup" onclick="closePopup('alertsPopup')">
+        <div class="alertsPopupContent" id="alertsPopupContent" onclick="event.stopPropagation()">
+            <h1>Alert Database Search</h1>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius accusamus doloremque illo ipsum nihil
+                sapiente suscipit culpa nostrum vero, repellendus veritatis ea qui cum quis dignissimos harum aperiam
+                perferendis deleniti excepturi eos. Assumenda veritatis sapiente ab ducimus facere placeat reiciendis.
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>
