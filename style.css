@@ -22,17 +22,17 @@ html {
 }
 
 .loginBody {
-    background-image: linear-gradient(to top, #2c7bf4, #0081e8, #0084d9, #0085c7, #0085b5, #0c7ea7, #177799, #20708b, #1c627d, #18546f, #154761, #113a53);
+    background-image: linear-gradient(to top, #2c7bf4, #0081e8, #0084d9, #0085c7, #0085b5, #0c7ea7, #177799, #20708b, #1c627d, #18546f, #154761, #113a53) !important;
     background-size: contain;
     height: 100vh;
 }
 
 .sheriffBackground {
-    background-image: linear-gradient(to bottom, #37653d, #316038, #2b5b32, #24562d, #1e5128);
+    background-image: linear-gradient(to bottom, #37653d, #316038, #2b5b32, #24562d, #1e5128) !important;
 }
 
 .stateBackground {
-    background-image: linear-gradient(to top, #877078, #7e6870, #756168, #6d5960, #645258);
+    background-image: linear-gradient(to top, #877078, #7e6870, #756168, #6d5960, #645258) !important;
 }
 
 .panicBackground {
