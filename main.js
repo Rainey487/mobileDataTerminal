@@ -56,19 +56,19 @@ changeDept = (activeDept) => {
     if (activeDept === 'Police') {
         mainBody.classList.remove('sheriffBackground')
         mainBody.classList.remove('stateBackground')
-        document.getElementById("deptLogo").src = "../images/LSPDlogo.webp";
+        document.getElementById("deptLogo").src = "images/LSPDlogo.webp";
         document.title = 'Los Santos Police Dept MDT'
         currentDept = 'Police'
 
     } else if (activeDept === 'Sheriff') {
         mainBody.classList.add('sheriffBackground')
         mainBody.classList.remove('stateBackground')
-        document.getElementById("deptLogo").src = "../images/bcsoLogo.png";
+        document.getElementById("deptLogo").src = "images/bcsoLogo.png";
         document.title = 'Blaine County Sheriffs Office MDT'
         currentDept = 'Sheriff'
     } else {
         mainBody.classList.add('stateBackground')
-        document.getElementById("deptLogo").src = "../images/sasp.png";
+        document.getElementById("deptLogo").src = "images/sasp.png";
         document.title = 'San Andreas State Police MDT'
         currentDept = 'State Police'
     }
