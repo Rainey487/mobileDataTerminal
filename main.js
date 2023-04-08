@@ -105,10 +105,16 @@ const openPopup = (popupType) => {
     document.getElementById(popupType).style.display = "flex";
     if (currentDept === 'Sheriff') {
         document.getElementById('vehiclePopupContent').style.backgroundImage = 'linear-gradient(to bottom, #37653d, #316038, #2b5b32, #24562d, #1e5128)';
+        document.getElementById('alertsPopupContent').style.backgroundImage = 'linear-gradient(to bottom, #37653d, #316038, #2b5b32, #24562d, #1e5128)';
+        document.getElementById('personPopupContent').style.backgroundImage = 'linear-gradient(to bottom, #37653d, #316038, #2b5b32, #24562d, #1e5128)';
     } else if (currentDept === 'State Police') {
         document.getElementById('vehiclePopupContent').style.backgroundImage = 'linear-gradient(to top, #877078, #7e6870, #756168, #6d5960, #645258)';
+        document.getElementById('alertsPopupContent').style.backgroundImage = 'linear-gradient(to top, #877078, #7e6870, #756168, #6d5960, #645258)';
+        document.getElementById('personPopupContent').style.backgroundImage = 'linear-gradient(to top, #877078, #7e6870, #756168, #6d5960, #645258)';
     } else {
         document.getElementById('vehiclePopupContent').style.backgroundImage = 'linear-gradient(to top, #2c7bf4, #0081e8, #0084d9, #0085c7, #0085b5, #0c7ea7, #177799, #20708b, #1c627d, #18546f, #154761, #113a53)';
+        document.getElementById('alertsPopupContent').style.backgroundImage = 'linear-gradient(to top, #2c7bf4, #0081e8, #0084d9, #0085c7, #0085b5, #0c7ea7, #177799, #20708b, #1c627d, #18546f, #154761, #113a53)';
+        document.getElementById('personPopupContent').style.backgroundImage = 'linear-gradient(to top, #2c7bf4, #0081e8, #0084d9, #0085c7, #0085b5, #0c7ea7, #177799, #20708b, #1c627d, #18546f, #154761, #113a53)';
     }
 };
 
