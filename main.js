@@ -68,7 +68,7 @@ changeDept = (activeDept) => {
         currentDept = 'Sheriff'
     } else {
         mainBody.classList.add('stateBackground')
-        document.getElementById("deptLogo").src = "../images/SASP.png";
+        document.getElementById("deptLogo").src = "../images/sasp.png";
         document.title = 'San Andreas State Police MDT'
         currentDept = 'State Police'
     }
