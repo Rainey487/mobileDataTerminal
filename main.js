@@ -50,6 +50,7 @@ function changeStatus(statusText) {
 updateStatusButtons();
 
 changeDept = (activeDept) => {
+    console.log('changeDept called with activeDept:', activeDept);
     deptSelect = document.getElementById('deptSelect')
     mainBody = document.getElementById('mainBody')
 
