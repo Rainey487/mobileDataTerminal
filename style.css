@@ -36,7 +36,7 @@ html {
 }
 
 .panicBackground {
-    background-image: linear-gradient(to top, #b31717, #ba1e1d, #c12424, #c82a2a, #cf3030);
+    background-image: linear-gradient(to top, #b31717, #ba1e1d, #c12424, #c82a2a, #cf3030) !important;
 }
 
 header {
