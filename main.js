@@ -42,8 +42,8 @@ function changeStatus(statusText) {
     currentStatus = statusText;
     updateStatusButtons();
     if (currentStatus === 'Panic Alarm') {
-        mainBody.classList.add('panicBackground !important')
-    } else mainBody.classList.remove('panicBackground !important')
+        mainBody.classList.add('panicBackground')
+    } else mainBody.classList.remove('panicBackground')
     console.log(currentStatus)
 }
 
@@ -54,20 +54,20 @@ changeDept = (activeDept) => {
     mainBody = document.getElementById('mainBody')
 
     if (activeDept === 'Police') {
-        mainBody.classList.remove('sheriffBackground !important')
-        mainBody.classList.remove('stateBackground !important')
+        mainBody.classList.remove('sheriffBackground')
+        mainBody.classList.remove('stateBackground')
         document.getElementById("deptLogo").src = "../images/LSPDlogo.webp";
         document.title = 'Los Santos Police Dept MDT'
         currentDept = 'Police'
 
     } else if (activeDept === 'Sheriff') {
-        mainBody.classList.add('sheriffBackground !important')
-        mainBody.classList.remove('stateBackground !important')
+        mainBody.classList.add('sheriffBackground')
+        mainBody.classList.remove('stateBackground')
         document.getElementById("deptLogo").src = "../images/bcsoLogo.png";
         document.title = 'Blaine County Sheriffs Office MDT'
         currentDept = 'Sheriff'
     } else {
-        mainBody.classList.add('stateBackground !important')
+        mainBody.classList.add('stateBackground')
         document.getElementById("deptLogo").src = "../images/SASP.png";
         document.title = 'San Andreas State Police MDT'
         currentDept = 'State Police'
