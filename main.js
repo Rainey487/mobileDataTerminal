@@ -18,7 +18,6 @@ let currentStatus = 'Not Set';
 let currentCall = '';
 let currentCallNumber = 'Call Number' + ' ' + 1234;
 let currentDept = 'Police';
-let activeDept = '';
 
 
 function updateStatusButtons() {
