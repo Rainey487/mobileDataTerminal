@@ -1,17 +1,12 @@
-const showSignUp = () => {
-    document.getElementById('loginForm').style.display = "none"
-    document.getElementById('signUpForm').style.display = "flex"
-    /* document.getElementById('loginImg').style.maxHeight = "15rem" */
-    document.getElementById('signUpPrompt').innerHTML = "Already have an account? <a onclick='hideSignUp()' href='#'>Sign in</a>"
-    document.title = "Community Portal Sign Up"
-    console.log('the function has ran')
-}
+import { initializeApp } from 'firebase/app';
 
-const hideSignUp = () => {
-    document.getElementById('loginForm').style.display = "flex"
-    document.getElementById('signUpForm').style.display = "none"
-    /* document.getElementById('loginImg').style.maxHeight = "18rem" */
-    document.getElementById('signUpPrompt').innerHTML = "Need an account? <a onclick='showSignUp()' href='#'>Sign up</a>"
-    document.title = "Community Portal Sign In"
-    console.log('the function has ran')
-}
+const firebaseConfig = {
+    apiKey: "AIzaSyA0NjB60bOcTWz1DDFt-pbR5pzyTZxzLnY",
+    authDomain: "roleplay-community.firebaseapp.com",
+    projectId: "roleplay-community",
+    storageBucket: "roleplay-community.appspot.com",
+    messagingSenderId: "823891967200",
+    appId: "1:823891967200:web:252c129429b46d0b206485"
+};
+
+const app = initializeApp(firebaseConfig); 

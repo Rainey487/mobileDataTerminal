@@ -1,0 +1,23 @@
+{
+  "name": "project-012",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rainey487/mobileDataTerminal.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rainey487/mobileDataTerminal/issues"
+  },
+  "homepage": "https://github.com/Rainey487/mobileDataTerminal#readme",
+  "dependencies": {
+    "firebase": "^9.19.1"
+  }
+}
