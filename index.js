@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app';
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { getFirestore } from 'firebase/app';
 
 const firebaseConfig = {
@@ -15,33 +15,7 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app)
 const db = getFirestore(app)
 
-const signUpForm = document.getElementById("signUpForm");
-
-signUpForm.addEventListener("submit", (event) => {
-    event.preventDefault(); // prevent the form from submitting normally
-
-    const email = signUpForm.email.value;
-    const password = signUpForm.password.value;
-
-    // Call createUserWithEmailAndPassword method
-    auth.createUserWithEmailAndPassword(email, password)
-        .then((userCredential) => {
-            // Signed in
-            const user = userCredential.user;
-            console.log(user);
-            window.location.replace("main.html"); // redirect to main.html
-        })
-        .catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            console.error(error);
-            // ... you can show an error message to the user
-        });
-});
-
-
-
-signInWithEmailAndPassword(auth, email, password)
+createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
         // Signed in 
         const user = userCredential.user;
@@ -50,4 +24,5 @@ signInWithEmailAndPassword(auth, email, password)
     .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
+        // ..
     });
