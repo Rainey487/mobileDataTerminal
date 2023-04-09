@@ -6,22 +6,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="index.js"></script>
     <title>Police MDT Login</title>
 </head>
 
 <body class="loginBody">
     <main class="loginMain">
         <section>
-            <img src="images/LSPDlogo.webp" alt="Police Logo">
+            <img id="loginImg"
+                src="https://content.invisioncic.com/g312094/monthly_2021_05/9anyBSC.png.2b5cb7d9c257002ad89690d41b6dc372.png"
+                alt="Police Logo">
             <h1>Mobile Data <br> Terminal</h1>
-            <form action="post">
+            <form id="loginForm" action="post">
                 <label for="email">Email</label>
                 <input type="email" name="email">
                 <label for="password">Password</label>
                 <input type="password" name="password">
                 <input type="submit" value="LOGIN">
             </form>
-            <p>Not a community member? <a href="#">Sign Up</a></p>
+            <form id="signUpForm" action="post">
+                <label for="email">Email</label>
+                <input type="email" name="email">
+                <label for="number">Community Number</label>
+                <input type="number" name="number">
+                <label for="password">Password</label>
+                <input type="password" name="password">
+                <label for="password">Confirm Password</label>
+                <input type="password" name="password">
+                <input type="submit" value="Apply Now">
+            </form>
+
+            <p id="signUpPrompt">No account? <a onclick="showSignUp()" href="#">Apply for MDT access</a></p>
         </section>
     </main>
 </body>

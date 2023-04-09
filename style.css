@@ -24,7 +24,7 @@ html {
 .loginBody {
     background-image: linear-gradient(to top, #2c7bf4, #0081e8, #0084d9, #0085c7, #0085b5, #0c7ea7, #177799, #20708b, #1c627d, #18546f, #154761, #113a53) !important;
     background-size: contain;
-    height: 100vh;
+    height: 100%;
 }
 
 .sheriffBackground {
@@ -494,10 +494,12 @@ footer select option {
 }
 
 .loginMain {
-    height: 100vh;
+    min-height: 100vh;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 0.5rem;
 }
 
 .loginMain section {
@@ -511,11 +513,11 @@ footer select option {
     flex-direction: column;
 }
 
-.loginMain section img {
+/* .loginMain section img {
     width: 18rem;
     align-self: center;
 }
-
+ */
 .loginMain section form {
     display: flex;
     flex-direction: column;
@@ -581,6 +583,20 @@ footer select option {
 input[type="button"].active {
     background-color: green;
     color: white;
+}
+
+#loginForm {
+    display: flex;
+}
+
+#signUpForm {
+    display: none;
+}
+
+#loginImg {
+    height: 100%;
+    max-height: 18rem;
+    align-self: center;
 }
 
 /* Media queries for tablet devices */
