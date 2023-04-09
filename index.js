@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app';
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { getFirestore } from 'firebase/app';
 
 const firebaseConfig = {
@@ -15,20 +15,38 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app)
 const db = getFirestore(app)
 
-document.querySelector('#signUpForm').addEventListener('submit', (event) => {
-    event.preventDefault();
-    const email = document.querySelector('#signUpForm [name="email"]').value;
-    const password = document.querySelector('#signUpForm [name="password"]').value;
+const signUpForm = document.getElementById("signUpForm");
+
+signUpForm.addEventListener("submit", (event) => {
+    event.preventDefault(); // prevent the form from submitting normally
+
+    const email = signUpForm.email.value;
+    const password = signUpForm.password.value;
+
+    // Call createUserWithEmailAndPassword method
     auth.createUserWithEmailAndPassword(email, password)
         .then((userCredential) => {
-            // User created successfully
+            // Signed in
             const user = userCredential.user;
-            alert('User created successfully!');
-            // TODO: Redirect to a success page or sign the user in
+            console.log(user);
+            window.location.replace("main.html");
         })
         .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
-            alert(`Error: ${errorMessage}`);
+            console.error(error);
+            // ... you can show an error message to the user
         });
 });
+
+
+signInWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+        // Signed in 
+        const user = userCredential.user;
+        // ...
+    })
+    .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+    });
