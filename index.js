@@ -10,6 +10,6 @@ const hideSignUp = () => {
     document.getElementById('loginForm').style.display = "flex"
     document.getElementById('signUpForm').style.display = "none"
     /* document.getElementById('loginImg').style.maxHeight = "18rem" */
-    document.getElementById('signUpPrompt').innerHTML = "No account? <a onclick='showSignUp()' href='#'>Apply for MDT access</a>"
+    document.getElementById('signUpPrompt').innerHTML = "Need an account? <a onclick='showSignUp()' href='#'>Sign up</a>"
     console.log('the function has ran')
 }

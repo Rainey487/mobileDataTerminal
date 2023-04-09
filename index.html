@@ -16,7 +16,7 @@
             <img id="loginImg"
                 src="https://content.invisioncic.com/g312094/monthly_2021_05/9anyBSC.png.2b5cb7d9c257002ad89690d41b6dc372.png"
                 alt="Police Logo">
-            <h1>Mobile Data <br> Terminal</h1>
+            <h1>Community Portal</h1>
             <form id="loginForm" action="post">
                 <label for="email">Email</label>
                 <input type="email" name="email">
@@ -26,9 +26,9 @@
             </form>
             <form id="signUpForm" action="post">
                 <label for="email">Email</label>
-                <input type="email" name="email">
+                <input type="email" name="email" placeholder="example@gmail.com">
                 <label for="number">Community Number</label>
-                <input type="number" name="number">
+                <input type="text" name="number" maxlength="3" placeholder="Ex. 076">
                 <label for="password">Password</label>
                 <input type="password" name="password">
                 <label for="password">Confirm Password</label>
@@ -36,7 +36,7 @@
                 <input type="submit" value="Apply Now">
             </form>
 
-            <p id="signUpPrompt">No account? <a onclick="showSignUp()" href="#">Apply for MDT access</a></p>
+            <p id="signUpPrompt">Need an account? <a onclick='showSignUp()' href='#'>Sign up</a></p>
         </section>
     </main>
 </body>
