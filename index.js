@@ -29,7 +29,7 @@ signUpForm.addEventListener("submit", (event) => {
             // Signed in
             const user = userCredential.user;
             console.log(user);
-            window.location.replace("main.html");
+            window.location.replace("main.html"); // redirect to main.html
         })
         .catch((error) => {
             const errorCode = error.code;
@@ -38,6 +38,7 @@ signUpForm.addEventListener("submit", (event) => {
             // ... you can show an error message to the user
         });
 });
+
 
 
 signInWithEmailAndPassword(auth, email, password)
