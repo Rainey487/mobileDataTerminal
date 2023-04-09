@@ -15,14 +15,30 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app)
 const db = getFirestore(app)
 
-createUserWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-        // Signed in 
-        const user = userCredential.user;
-        // ...
-    })
-    .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        // ..
-    });
+
+const newSignUp = (email, password, identifier) => {
+    createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+            // Signed in 
+            const user = userCredential.user;
+            const uid = user.uid;
+            firebase.firestore().collection('users').doc(uid).set({
+                identifier: identifier,
+                email: email
+            });
+        })
+        .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.error(errorCode, errorMessage);
+        });
+}
+
+const signUpForm = document.getElementById('signUpForm');
+signUpForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const email = signUpForm.email.value;
+    const password = signUpForm.password.value;
+    const identifier = signUpForm.identifier.value;
+    newSignUp(email, password, identifier);
+});
