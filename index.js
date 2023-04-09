@@ -3,6 +3,7 @@ const showSignUp = () => {
     document.getElementById('signUpForm').style.display = "flex"
     /* document.getElementById('loginImg').style.maxHeight = "15rem" */
     document.getElementById('signUpPrompt').innerHTML = "Already have an account? <a onclick='hideSignUp()' href='#'>Sign in</a>"
+    document.title = "Community Portal Sign Up"
     console.log('the function has ran')
 }
 
